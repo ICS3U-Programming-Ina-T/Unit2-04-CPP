@@ -15,7 +15,7 @@ const float RENTAL_COST = 2.25;
 const float INGRED_COST = 1.50;
 
 // declare variables
-float diameter, subtotal, tax, taxNew, taxRound, taxFinal, total;
+float diameter, subtotal, tax, taxNew, total;
 
 
 int main() {
@@ -26,10 +26,8 @@ int main() {
   // calculate subtotal, tax, and total cost
   subtotal = LABOUR_COST + RENTAL_COST + (diameter * 1.5);
   tax = subtotal * HST;
-  taxNew = (tax * 100) + 0.5;
-  taxRound = floor(taxNew);
-  taxFinal = taxRound / 100;
-  total = subtotal + taxFinal;
+  taxNew = (round(tax * 100))/100;
+  total = subtotal + taxNew;
 
   // display the results to the user
   std::cout << "\n";
